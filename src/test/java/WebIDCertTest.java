@@ -48,9 +48,8 @@ public class WebIDCertTest
     public void testQueryModulusShort()
     {
         Model model = ModelFactory.createDefaultModel();
-        model.createResource("https://localhost:4443/admin/acl/agents/b69fb813-b4c7-44d0-8582-a20b25cb2491/#this").
-            addProperty(model.createProperty("http://www.w3.org/ns/auth/cert#key"), model.createResource("https://localhost:4443/admin/acl/public-keys/09d7f482-6bc8-4bef-887f-6d63bc4ebc2a/#this").
-                    addLiteral(model.createProperty("http://www.w3.org/ns/auth/cert#modulus"), model.createTypedLiteral(MODULUS_SHORT, XSDDatatype.XSDhexBinary)));
+        model.createResource().addProperty(model.createProperty("http://www.w3.org/ns/auth/cert#key"), model.createResource().
+            addLiteral(model.createProperty("http://www.w3.org/ns/auth/cert#modulus"), model.createTypedLiteral(MODULUS_SHORT, XSDDatatype.XSDhexBinary)));
 
         try (QueryExecution qex = QueryExecutionFactory.create(QUERY_MODULUS_SHORT, model))
         {
@@ -63,9 +62,8 @@ public class WebIDCertTest
     public void testQueryModulusLong()
     {
         Model model = ModelFactory.createDefaultModel();
-        model.createResource("https://localhost:4443/admin/acl/agents/b69fb813-b4c7-44d0-8582-a20b25cb2491/#this").
-            addProperty(model.createProperty("http://www.w3.org/ns/auth/cert#key"), model.createResource("https://localhost:4443/admin/acl/public-keys/09d7f482-6bc8-4bef-887f-6d63bc4ebc2a/#this").
-                    addLiteral(model.createProperty("http://www.w3.org/ns/auth/cert#modulus"), model.createTypedLiteral(MODULUS_LONG, XSDDatatype.XSDhexBinary)));
+        model.createResource().addProperty(model.createProperty("http://www.w3.org/ns/auth/cert#key"), model.createResource().
+            addLiteral(model.createProperty("http://www.w3.org/ns/auth/cert#modulus"), model.createTypedLiteral(MODULUS_LONG, XSDDatatype.XSDhexBinary)));
 
         try (QueryExecution qex = QueryExecutionFactory.create(QUERY_MODULUS_LONG, model))
         {
